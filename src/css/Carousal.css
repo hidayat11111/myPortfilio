@@ -1,0 +1,21 @@
+.relative {
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.text-white {
+    color: white;
+}
+.div1{
+    border: 2px solid wheat;
+    display: flex;
+    justify-content: center;
+}
+/* Add more styles as needed */

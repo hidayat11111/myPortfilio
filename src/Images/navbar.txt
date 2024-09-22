@@ -1,0 +1,68 @@
+{/* <section className="w-full top-0 left-0 z-10 bg-black">
+  <nav className="flex items-center justify-between text-white w-full">
+    <div className="px-5 xl:px-12 py-6 flex w-full items-center justify-between">
+      
+     
+      <div className="xl:flex flex-grow items-center justify-end">
+        <ul className="md:flex pr-16 font-light font-heading space-x-12">
+          {navLinks.map(({ path, label }) => (
+            <Link to={path} key={label}>
+              <p className="font-sans font-normal text-sm bg-gradient-to-r from-slate-300 to-white bg-clip-text text-transparent hover:text-white hover:bg-none hover:underline">
+                {label}
+              </p>
+            </Link>
+          ))}
+        </ul>
+      </div>
+
+    
+      <button
+        className="xl:hidden flex items-center space-x-5"
+        onClick={toggleMenu}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 hover:text-gray-200"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+
+
+    <div
+      className={`py-4 fixed top-0 right-0 h-full w-full bg-black bg-opacity-90 text-white transition-transform transform ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      } z-20 overflow-hidden`}
+    >
+      <button
+        className="absolute top-4 right-4 text-white text-2xl"
+        onClick={toggleMenu}
+        aria-expanded={isOpen}
+      >
+        &times;
+      </button>
+      <ul className="flex flex-col items-center p-5 space-y-4 max-h-[80vh] overflow-y-auto">
+        {navLinks.map(({ path, label }) => (
+          <li key={label} className="list-none">
+            <Link
+              to={path}
+              onClick={toggleMenu}
+              className="font-sans font-normal text-sm bg-gradient-to-r from-slate-300 to-white bg-clip-text text-transparent hover:text-white hover:underline underline-offset-4 decoration-gray-500"
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</section>  */}
