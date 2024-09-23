@@ -3,7 +3,7 @@ import { TextGenerateEffect } from "./TextGeneration";
 import { CardBody, CardContainer, CardItem } from "./ProfilePop";
 import myProfile from "./../Images/myProfile.png";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import myProfile2 from "./../Images/myProfile2.png";
 import education from "./../Images/education.png";
 import experience from "./../Images/experience.png";
@@ -38,20 +38,37 @@ import hidLogo from './../Images/hidLogo.png'
 const LandingPage = () => {
   const [click, setClick] = useState(false);
 
+  const aboutRef = useRef(null);
+  const projectRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const handleClickAbout = (e) => {
+    e.preventDefault();  // Prevent default anchor behavior
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+      aboutRef.current.focus();
+    }
+  };
+
+  const handleClickProjects = (e) => {
+    e.preventDefault();  // Prevent default anchor behavior
+    if (projectRef.current) {
+      projectRef.current.scrollIntoView({ behavior: 'smooth' });
+      projectRef.current.focus();
+    }
+  };
+
+  const handleClickContact = (e) => {
+    e.preventDefault();  // Prevent default anchor behavior
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+      contactRef.current.focus();
+    }
+  };
+
+
   const handleClick = () => setClick(!click);
-  // const [isOpen, setIsOpen] = useState(false);
 
-  // const navLinks = [
-  //   { path: "/", label: "Home" },
-  //   { path: "/about", label: "About" },
-  //   { path: "/services", label: "Services" },
-  //   { path: "/Doctors", label: "Doctors" },
-  //   { path: "/contact", label: "Contact" },
-  // ];
-
-  // const toggleMenu = () => {
-  //   setIsOpen(!isOpen);
-  // };
   useEffect(() => {
     AOS.init();
   }, []);
@@ -117,37 +134,36 @@ const LandingPage = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                exact
-                to="/about"
+              <a
+             
+             href="#about" onClick={handleClickAbout}
                 activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+                // onClick={handleClick}
               >
                 About
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                exact
-                to="/blog"
+              <a
+               
+               href="#projects" onClick={handleClickProjects}
                 activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+             
               >
-                Project
-              </NavLink>
+                Projects
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                exact
-                to="/contact"
+              <a
+                href="#contact" onClick={handleClickContact}
                 activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+               
               >
-                Contact 
-              </NavLink>
+                Contact Us
+              </a>
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
@@ -225,7 +241,13 @@ const LandingPage = () => {
 
       {/* About section starts from here */}
 
-      <div  className=" lg:h-svh h-auto w-full bg-black flex flex-col items-center justify-evenly gap-12  pt-5 lg:pt-0 lg:gap-0">
+      <div 
+      id="about"
+        ref={aboutRef}
+        tabIndex="-1"
+       
+      
+        className=" lg:h-svh h-auto w-full bg-black flex flex-col items-center justify-evenly gap-12  pt-5 lg:pt-0 lg:gap-0">
         <img className="w-4" src={pp} alt="error" />
         <div className="flex flex-col items-center lg:mt-0">
           <p className="text-neutral-100 font-sans  text-sm">
@@ -416,7 +438,13 @@ const LandingPage = () => {
         </svg>
       </div>
 
-      <div className="lg:h-svh h-auto flex flex-col items-center justify-evenly w-full gap-3">
+      <div 
+      
+      id="projects"
+        ref={projectRef}
+        tabIndex="-1"
+      
+       className="lg:h-svh h-auto flex flex-col items-center justify-evenly w-full gap-3">
         <img className="w-4" src={pp} alt="error" />
         <div className="flex flex-col items-center pt-10 xl:pt-0 ">
           <p className="text-[#12F7D6] tracking-wide md:text-5xl text-4xl lg:text-4xl font-bold font-sans lg:pb-2 pb-1 pt-2 lg:pt-0 ">
@@ -616,7 +644,15 @@ const LandingPage = () => {
         </svg>
       </div>
 
-      <div className="lg:h-svh flex flex-col items-center justify-evenly w-full lg:gap-3 gap-14">
+      <div 
+      
+
+      id="contact"
+        ref={contactRef}
+        tabIndex="-1"
+      
+      
+       className="lg:h-svh flex flex-col items-center justify-evenly w-full lg:gap-3 gap-14">
         <img className="w-4 " src={pp} alt="error" />
         <div className="flex flex-col items-center xl:pt-0 ">
           <p className="text-[#12F7D6] tracking-wide md:text-5xl text-4xl lg:text-4xl font-bold font-sans lg:pb-2 pb-1 lg:pt-0 ">
