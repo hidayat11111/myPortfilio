@@ -35,7 +35,7 @@ import { NavLink } from "react-router-dom";
 import "./../css/nav.css";
 import hidLogo from "./../Images/hidLogo.png";
 import { SunIcon, MoonIcon } from '@heroicons/react/solid'; 
-import BounceLoader from 'react-spinners/BounceLoader';
+
 
 const LandingPage = () => {
   const [click, setClick] = useState(false);
@@ -123,11 +123,11 @@ const LandingPage = () => {
     link.click(); // Simulate click to download
     document.body.removeChild(link); // Remove the link from the document
   };
-  const [loading, setLoading] = useState(true); // Control loader state
+  
 
   return (
     <div className="bg-black pb-6 lg:pb-3 dark:bg-white ">
-    <BounceLoader color="gray" loading={loading} size={60} />
+  
       <nav className="navbar">
         <div className="nav-container text-sm font-normal font-sans text-gray-500">
        

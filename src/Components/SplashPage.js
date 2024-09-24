@@ -13,6 +13,7 @@ function SparklesPreview() {
     }, 3000);
   }, [nav]);
   const [loading, setLoading] = useState(true);
+  
   return (
     <div className="h-svh w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
        <BounceLoader color="gray" loading={loading} size={60} />
